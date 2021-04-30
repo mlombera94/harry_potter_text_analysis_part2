@@ -1,7 +1,7 @@
 ---
 title: "Harry Potter and the Analysis of Text Part 2"
 author: "Maurisio Lombera"
-date: "March 17, 2021"
+date: "April 30, 2021"
 output:
   rmarkdown::github_document: default
   html_notebook: default
@@ -159,6 +159,7 @@ bing_sentiment %>%
     geom_bar(alpha = 0.5, stat = "identity", show.legend = FALSE) +
     facet_wrap(~ book, ncol = 2, scales = "free_x") # splits the graphs by novel 
 ```
+
 Based on the visualization from the graphs above, we can easily see how each novel's sentiment changes as the story progresses. For example, Half-Blood Prince starts with a considerable amount of negative sentiment. Surprisingly, towards the finale of the series in Deathly Hallows, the sentiment remains negative. 
 
 For better comparison among each of the lexicons, we can visualize the sentiment similarly above with a slight tweak and facet the graphs by both lexicon and novel. 
@@ -168,5 +169,6 @@ combined_lexicons %>%
   geom_bar(alpha = 0.8, stat = "identity", show.legend = FALSE) + 
   facet_grid(book ~ method) # split the graphs by each lexicon and by book
 ```
+
 Based on the above results, similar peaks and dips in sentiment occur across each of the lexicons with differences on the magnitude of sentiment; the `AFINN` lexicon tends to have higher degrees of both positive and negative sentiment compared to both `Bing` and `NRC`.
 
